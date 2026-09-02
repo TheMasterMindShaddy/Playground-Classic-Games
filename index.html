@@ -1,41 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#11172e">
-  <title>Playground — Classic Games</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <main class="page-shell">
-    <header class="hero">
-      <a class="brand" href="#top" aria-label="Playground home"><span class="brand-mark">P</span><span>playground</span></a>
-      <p class="eyebrow">TWO CLASSICS · ONE PLAYGROUND</p>
-      <h1>Take a break.<br><em>Make a move.</em></h1>
-      <p class="intro">A tiny arcade for quick challenges and just-one-more-game moments.</p>
-      <div class="hero-dots" aria-hidden="true"><i></i><i></i><i></i></div>
-    </header>
-    <section class="games-grid" aria-label="Games">
-      <article class="game-card ttt-card" id="tic-tac-toe">
-        <div class="card-head"><div><p class="game-number">01 / CLASSIC</p><h2>Tic Tac Toe</h2></div><span class="game-icon">✕</span></div>
-        <div class="ttt-status" id="ttt-status" aria-live="polite"><span class="turn-dot x-dot"></span>YOUR TURN <strong>×</strong></div>
-        <div class="ttt-board" id="ttt-board" aria-label="Tic Tac Toe board"><button aria-label="Top left"></button><button aria-label="Top center"></button><button aria-label="Top right"></button><button aria-label="Middle left"></button><button aria-label="Middle center"></button><button aria-label="Middle right"></button><button aria-label="Bottom left"></button><button aria-label="Bottom center"></button><button aria-label="Bottom right"></button></div>
-        <div class="card-footer"><span class="score-label">YOU <b id="x-score">0</b> — <b id="o-score">0</b> BOT</span><button class="text-button" id="ttt-reset">NEW ROUND <span>↻</span></button></div>
-      </article>
-      <article class="game-card snake-card" id="snake">
-        <div class="card-head"><div><p class="game-number">02 / ARCADE</p><h2>Snake</h2></div><span class="game-icon snake-icon">⌁</span></div>
-        <div class="snake-meta"><span>SCORE <b id="snake-score">000</b></span><span>BEST <b id="snake-best">000</b></span></div>
-        <div class="snake-stage"><canvas id="snake-canvas" width="400" height="400" aria-label="Snake game board"></canvas><div class="snake-overlay" id="snake-overlay"><span class="overlay-kicker">READY?</span><strong>SNAKE</strong><button id="snake-start">START GAME <span>→</span></button></div></div>
-        <div class="snake-footer"><span>USE ARROW KEYS OR</span><div class="key-cluster" aria-hidden="true"><i>↑</i><i>←</i><i>↓</i><i>→</i></div><button class="text-button" id="snake-reset">RESET <span>↻</span></button></div>
-        <div class="mobile-controls" aria-label="Snake controls"><button data-dir="up">↑</button><button data-dir="left">←</button><button data-dir="down">↓</button><button data-dir="right">→</button></div>
-      </article>
-    </section>
-    <footer>DESIGNED FOR A LITTLE JOY <span>✦</span> PICK A GAME &amp; PLAY</footer>
-  </main>
-  <script src="tic-tac-toe.js"></script><script src="snake.js"></script>
-</body>
-</html>
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#1b1742"><title>JoyStick Arcade</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Nunito:wght@500;700;800;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css"></head>
+<body><div class="glow glow-one"></div><div class="glow glow-two"></div><main class="app">
+  <nav><a class="logo" href="#home"><span>J</span>JoyStick</a><div class="nav-links"><a href="#browse">Browse games</a><a href="#about">How to play</a></div><button class="nav-play" data-go="browse">Play now <b>&rarr;</b></button></nav>
+  <section class="home view active" id="home"><div class="hero-copy"><p class="tag">&starf; YOUR POCKET ARCADE</p><h1>Big fun.<br><i>Zero downloads.</i></h1><p class="hero-text">A cheerful collection of familiar games, made for tiny breaks and mighty scores.</p><div class="hero-actions"><button class="primary" data-go="browse">Explore games <span>&rarr;</span></button><button class="ghost" data-go="tetris">Play Tetris <span>&#9654;</span></button></div><div class="mini-stats"><span><b>07</b> games</span><span><b>&infin;</b> good times</span></div></div><div class="hero-art" aria-hidden="true"><div class="orbit o1"></div><div class="orbit o2"></div><div class="cube c1"></div><div class="cube c2"></div><div class="smile">&#9786;</div><div class="floating-card">NEW<br><b>HIGH SCORE</b></div></div></section>
+  <section class="browse view" id="browse"><div class="section-heading"><div><p class="tag">PICK YOUR PLAYER</p><h2>The game shelf</h2></div><p>What are you in the mood for?</p></div><div class="filters"><button class="selected" data-filter="all">All games</button><button data-filter="arcade">Arcade</button><button data-filter="brain">Brainy</button><button data-filter="classic">Classic</button></div><div class="game-grid">
+    <article class="game-tile purple" data-kind="arcade" data-go="tetris"><div class="tile-icon blocks"><i></i><i></i><i></i><i></i></div><p>ARCADE</p><h3>Tetris</h3><span>Stack it right <b>&rarr;</b></span></article>
+    <article class="game-tile green" data-kind="arcade" data-go="snake"><div class="tile-icon">&#126;</div><p>ARCADE</p><h3>Snake</h3><span>Stay hungry <b>&rarr;</b></span></article>
+    <article class="game-tile peach" data-kind="classic" data-go="tic-tac-toe"><div class="tile-icon">&#10005;</div><p>CLASSIC</p><h3>Tic Tac Toe</h3><span>Outsmart the bot <b>&rarr;</b></span></article>
+    <article class="game-tile blue" data-kind="brain" data-go="guess"><div class="tile-icon">?</div><p>BRAINY</p><h3>Guess it!</h3><span>Find the number <b>&rarr;</b></span></article>
+    <article class="game-tile yellow" data-kind="brain" data-go="quiz"><div class="tile-icon">&#9889;</div><p>BRAINY</p><h3>Quick Quiz</h3><span>Test yourself <b>&rarr;</b></span></article>
+    <article class="game-tile pink" data-kind="classic" data-go="rps"><div class="tile-icon">&#9994;</div><p>CLASSIC</p><h3>Rock Paper</h3><span>Beat the bot <b>&rarr;</b></span></article>
+    <article class="game-tile orange" data-kind="brain" data-go="memory"><div class="tile-icon">&#9733;</div><p>BRAINY</p><h3>Memory Flip</h3><span>Find the pairs <b>&rarr;</b></span></article>
+  </div></section>
+  <section class="game-view view" id="tetris"><div class="game-top"><button class="back" data-go="browse">&larr; Game shelf</button><div><p class="tag">ARCADE / 01</p><h2>Tetris</h2></div><p class="game-help">Arrows to move &bull; Up to rotate</p></div><div class="tetris-layout"><canvas id="tetris-canvas" width="300" height="600"></canvas><aside class="game-panel"><p>NEXT</p><canvas id="next-canvas" width="120" height="120"></canvas><p>SCORE <b id="tetris-score">0000</b></p><p>LINES <b id="tetris-lines">00</b></p><button class="primary" id="tetris-start">Start game</button></aside></div></section>
+  <section class="game-view view" id="snake"><div class="game-top"><button class="back" data-go="browse">&larr; Game shelf</button><div><p class="tag">ARCADE / 02</p><h2>Snake</h2></div><p class="game-help">Arrow keys or buttons to steer</p></div><div class="solo-game"><div class="hud"><span>SCORE <b id="snake-score">000</b></span><span>BEST <b id="snake-best">000</b></span></div><div class="canvas-frame"><canvas id="snake-canvas" width="400" height="400"></canvas><div class="canvas-message" id="snake-message"><strong>Ready to slither?</strong><button class="primary" id="snake-start">Start game</button></div></div><div class="direction-pad"><button data-dir="up">&uarr;</button><button data-dir="left">&larr;</button><button data-dir="down">&darr;</button><button data-dir="right">&rarr;</button></div></div></section>
+  <section class="game-view view" id="tic-tac-toe"><div class="game-top"><button class="back" data-go="browse">&larr; Game shelf</button><div><p class="tag">CLASSIC / 03</p><h2>Tic Tac Toe</h2></div><p class="game-help">You are X. Beat the bot!</p></div><div class="solo-game"><div class="hud"><span>YOU <b id="x-score">0</b></span><span id="ttt-status">YOUR TURN</span><span>BOT <b id="o-score">0</b></span></div><div class="ttt-board" id="ttt-board"> <button></button><button></button><button></button><button></button><button></button><button></button><button></button><button></button><button></button></div><button class="primary small" id="ttt-reset">New round</button></div></section>
+  <section class="game-view view" id="guess"><div class="game-top"><button class="back" data-go="browse">&larr; Game shelf</button><div><p class="tag">BRAINY / 04</p><h2>Guess it!</h2></div><p class="game-help">A number from 1 to 100</p></div><div class="solo-game guess-box"><div class="number-orb">?</div><h3>Can you find my secret number?</h3><p id="guess-status">I&rsquo;m thinking of a number between 1 and 100.</p><form id="guess-form"><input id="guess-input" type="number" min="1" max="100" placeholder="Your guess" required><button class="primary">Guess</button></form><div class="attempts">Attempts: <b id="guess-count">0</b></div><button class="text-reset" id="guess-reset">New secret number</button></div></section>
+  <section class="game-view view" id="quiz"><div class="game-top"><button class="back" data-go="browse">&larr; Game shelf</button><div><p class="tag">BRAINY / 05</p><h2>Quick Quiz</h2></div><p class="game-help">Five bright questions</p></div><div class="solo-game quiz-box"><div class="quiz-progress"><span id="quiz-progress">1 / 5</span><i><b id="quiz-bar"></b></i></div><h3 id="quiz-question">Loading question...</h3><div class="quiz-options" id="quiz-options"></div><button class="primary small hidden" id="quiz-next">Next question &rarr;</button></div></section>
+  <section class="game-view view" id="rps"><div class="game-top"><button class="back" data-go="browse">&larr; Game shelf</button><div><p class="tag">CLASSIC / 06</p><h2>Rock Paper</h2></div><p class="game-help">One hand. One winner.</p></div><div class="solo-game rps-box"><p id="rps-status">Pick your move!</p><div class="rps-battle"><span id="player-hand">?</span><b>VS</b><span id="bot-hand">?</span></div><div class="rps-choices"><button data-rps="rock">&#9994;<small>Rock</small></button><button data-rps="paper">&#9995;<small>Paper</small></button><button data-rps="scissors">&#9996;<small>Scissors</small></button></div><p class="scoreline">YOU <b id="rps-you">0</b> &mdash; <b id="rps-bot">0</b> BOT</p></div></section>
+  <section class="game-view view" id="memory"><div class="game-top"><button class="back" data-go="browse">&larr; Game shelf</button><div><p class="tag">BRAINY / 07</p><h2>Memory Flip</h2></div><p class="game-help">Find every matching pair</p></div><div class="solo-game"><div class="hud"><span>MOVES <b id="memory-moves">0</b></span><span id="memory-status">Match the stars!</span></div><div class="memory-board" id="memory-board"></div><button class="primary small" id="memory-reset">Shuffle cards</button></div></section>
+  <footer id="about">MADE FOR SMALL BREAKS &bull; BIG SMILES <span>&starf;</span></footer>
+</main><script src="app.js"></script><script src="tic-tac-toe.js"></script><script src="snake.js"></script><script src="tetris.js"></script><script src="guess-the-number.js"></script><script src="quiz.js"></script><script src="rock-paper-scissors.js"></script><script src="memory.js"></script></body></html>
